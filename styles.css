@@ -1,0 +1,209 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.auth {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  animation: changeBg 20s infinite ease-in-out;
+}
+@keyframes changeBg {
+  0% {
+    background-image: url("./assets/auth_bg_1.jpg");
+  }
+
+  16.66% {
+    background-image: url("./assets/auth_bg_2.jpg");
+  }
+
+  33.33% {
+    background-image: url("./assets/auth_bg_3.jpg");
+  }
+
+  50% {
+    background-image: url("./assets/auth_bg_4.jpg");
+  }
+
+  66.66% {
+    background-image: url("./assets/auth_bg_5.jpg");
+  }
+
+  83.33% {
+    background-image: url("./assets/auth_bg_6.jpg");
+  }
+
+  100% {
+    background-image: url("./assets/auth_bg_1.jpg");
+  }
+}
+.auth::-webkit-scrollbar {
+  display: none;
+}
+.auth_inner {
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(55px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 3rem;
+}
+.auth_inner.register_inner {
+  max-width: 40rem;
+}
+.auth_header {
+  display: grid;
+  gap: 1rem;
+}
+.auth_header h2 {
+  font-size: 2.2rem;
+  text-transform: capitalize;
+  text-align: center;
+  cursor: pointer;
+}
+.auth_header p {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.input_box {
+  position: relative;
+  margin: 30px 0;
+  width: 100%;
+  border-bottom: 2px solid white;
+}
+.input_box label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+.input_box input:focus ~ label,
+.input_box input:valid ~ label,
+.input_box input:not(:placeholder-shown) ~ label {
+  top: -5px;
+}
+.input_box input {
+  width: 100%;
+  height: 60px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 35px 0 5px;
+  color: white;
+}
+.input_box span {
+  position: absolute;
+  right: 8px;
+  color: white;
+  font-size: 1.4rem;
+  top: 20px;
+}
+.forget {
+  margin: 35px 0;
+  font-size: 0.85rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+@media screen and (min-width: 400px) {
+  .forget {
+    font-size: 1rem;
+  }
+}
+button {
+  position: relative;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  width: 100%;
+  height: 2rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: scale(1);
+  background-image: linear-gradient(
+    to right,
+    #333333 0%,
+    #000000 50%,
+    #333333 100%
+  );
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  color: white;
+  overflow: hidden;
+}
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  transition: all 0.5s ease-in-out;
+}
+button:hover::after {
+  border-color: white;
+}
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to right,
+    #000000 0%,
+    #333333 50%,
+    #000000 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: -1;
+}
+button:hover::before {
+  opacity: 1;
+}
+button:hover {
+  transform: scale(1.1);
+}
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-block: 1rem 0;
+  font-size: 0.7rem;
+}
+@media screen and (min-width: 400px) {
+  .register {
+    font-size: 1rem;
+  }
+}

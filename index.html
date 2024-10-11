@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jodna Technologies || Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="auth relative">
+      <section class="auth_inner">
+        <form autocomplete="off">
+          <div class="auth_header">
+            <h2>Jodna Technologies</h2>
+            <p>Login to your account</p>
+          </div>
+          <div class="input_box">
+            <span class="icon_mail"></span>
+            <input
+              type="email"
+              placeholder=" "
+              name="email"
+              required
+              autocomplete="new-email"
+            />
+            <label for="email">Email</label>
+          </div>
+          <div class="input_box">
+            <span class="icon_lock"></span>
+            <input
+              type="password"
+              placeholder=" "
+              name="password"
+              required
+              autocomplete="new-password"
+            />
+            <label for="password">Password</label>
+          </div>
+          <div class="forget">
+            <label>
+              <input type="checkbox" name="remember_me" />
+              Remember Me
+            </label>
+          </div>
+          <button type="submit">Log in</button>
+          <div class="register">
+            <p>Don't have an Account?</p>
+            <span> Register </span>
+          </div>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
